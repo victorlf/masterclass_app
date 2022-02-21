@@ -23,10 +23,12 @@ class AppWidget extends StatelessWidget {
         fontFamily: 'Poppins',
         textTheme: const TextTheme(
           headline1: TextStyle(
+            color: Color(0xFFEDF4F8),
             fontSize: 20.0,
             fontWeight: FontWeight.w600,
           ),
           headline2: TextStyle(
+            color: Color(0xFFEDF4F8),
             fontSize: 16.0,
             fontWeight: FontWeight.w600,
           ),
