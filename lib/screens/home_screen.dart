@@ -24,8 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
               'You have pushed the button this many times:',
             ),
             Text(
-              'App',
-              style: Theme.of(context).textTheme.headline4,
+              'You have pushed the button this many times:',
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ],
         ),

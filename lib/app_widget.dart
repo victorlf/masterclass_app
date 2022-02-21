@@ -9,8 +9,10 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        brightness: Brightness.dark,
         primaryColor: const Color(0xFF055AA3),
         highlightColor: const Color(0xFFEDF4F8),
+        cardColor: const Color(0xFF172026),
         backgroundColor: const Color(0xFF121517),
         scaffoldBackgroundColor: const Color(0xFF121517),
         appBarTheme: const AppBarTheme(
@@ -21,6 +23,22 @@ class AppWidget extends StatelessWidget {
           headline1: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.w600,
+          ),
+          headline2: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.w600,
+          ),
+          bodyText1: TextStyle(
+            color: Color(0xFF51565A),
+            fontFamily: 'Montserrat',
+            fontSize: 14.0,
+            fontWeight: FontWeight.w400,
+          ),
+          bodyText2: TextStyle(
+            color: Color(0xFF51565A),
+            fontFamily: 'Montserrat',
+            fontSize: 12.0,
+            fontWeight: FontWeight.w400,
           ),
         ),
       ),
