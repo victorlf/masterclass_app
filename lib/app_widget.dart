@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:masterclass_app/screens/splash_screen.dart';
-import 'screens/home_screen.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -8,7 +7,8 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Masterclass App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: const Color(0xFF055AA3),
@@ -18,6 +18,7 @@ class AppWidget extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFF121517),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFF121517),
+          elevation: 0.0,
         ),
         fontFamily: 'Poppins',
         textTheme: const TextTheme(
