@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/screens/splash_screen.dart';
 import 'screens/home_screen.dart';
 
 class AppWidget extends StatelessWidget {
@@ -42,7 +43,7 @@ class AppWidget extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomeScreen(title: 'Dark Demo Home Page'),
+      home: const SplashScreen(),
     );
   }
 }
