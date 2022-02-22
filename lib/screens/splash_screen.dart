@@ -1,10 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/screens/home_screen.dart';
+import 'package:masterclass_app/screens/activities_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
+
+  static String routeName = '/';
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -16,12 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
       const Duration(seconds: 2),
-      () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
-        ),
-      ),
+      () => Navigator.pushNamed(context, ActivitiesScreen.routeName),
     );
   }
 

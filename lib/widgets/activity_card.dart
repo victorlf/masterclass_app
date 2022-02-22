@@ -61,17 +61,20 @@ class ActivityCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    SvgPicture.asset('assets/images/icon-awesome-github.svg'),
-                    Text(
-                      '    Acessar código fonte',
-                      style: Theme.of(context).textTheme.headline2!.copyWith(
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.w400,
-                          ),
-                    ),
-                  ],
+                GestureDetector(
+                  onTap: () {},
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/images/icon-awesome-github.svg'),
+                      Text(
+                        '    Acessar código fonte',
+                        style: Theme.of(context).textTheme.headline2!.copyWith(
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                      ),
+                    ],
+                  ),
                 ),
                 MaterialButton(
                   onPressed: () {},

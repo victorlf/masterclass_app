@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/screens/activities_screen.dart';
 import 'package:masterclass_app/screens/splash_screen.dart';
 
 class AppWidget extends StatelessWidget {
@@ -46,7 +47,12 @@ class AppWidget extends StatelessWidget {
           ),
         ),
       ),
-      home: const SplashScreen(),
+      initialRoute: '/',
+      routes: {
+        SplashScreen.routeName: (context) => const SplashScreen(),
+        ActivitiesScreen.routeName: (context) => const ActivitiesScreen(),
+      },
+      //home: const SplashScreen(),
     );
   }
 }
