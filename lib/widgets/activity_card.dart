@@ -77,7 +77,7 @@ class ActivityCard extends StatelessWidget {
                   onPressed: () {},
                   color: Theme.of(context).primaryColor,
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 30.0, vertical: 15.0),
+                      horizontal: 30.0, vertical: 8.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
