@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/screens/activities_screen.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
-  static String routeName = '/';
+  static String route = '/';
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(
       const Duration(seconds: 2),
-      () => Navigator.pushNamed(context, ActivitiesScreen.routeName),
+      () => Navigator.pushNamed(context, HomeScreen.route),
     );
   }
 
