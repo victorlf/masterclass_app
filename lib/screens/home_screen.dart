@@ -75,13 +75,18 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           },
         ),
-        bottomNavigationBar: !hideBottomNavigation
-            ? CustomBottomNavigationBar(
-                width: width,
-                labels: labels,
-                controller: controller,
-              )
-            : const SizedBox(),
+        bottomNavigationBar: AnimatedCrossFade(
+          firstChild: CustomBottomNavigationBar(
+            width: width,
+            labels: labels,
+            controller: controller,
+          ),
+          secondChild: const SizedBox(),
+          crossFadeState: !hideBottomNavigation
+              ? CrossFadeState.showFirst
+              : CrossFadeState.showSecond,
+          duration: const Duration(milliseconds: 300),
+        ),
       ),
     );
   }
