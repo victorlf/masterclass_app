@@ -10,7 +10,7 @@ class SkillsLevel extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Container(
       width: double.infinity,
-      height: 35 * 5,
+      height: 35.0 * techSkillsData.length,
       margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
       padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
       decoration: BoxDecoration(
