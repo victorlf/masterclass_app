@@ -46,6 +46,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void dispose() {
+    scrollController.removeListener(() {});
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final children = <Widget>[
       ActivitiesScreen(scrollController),
