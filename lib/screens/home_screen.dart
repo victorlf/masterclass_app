@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final children = <Widget>[
       ActivitiesScreen(scrollController),
       const RepositoriesScreen(),
-      const AboutTheDevScreen(),
+      AboutTheDevScreen(),
     ];
 
     final width = MediaQuery.of(context).size.width;

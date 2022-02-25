@@ -1,15 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masterclass_app/widgets/favorite_technologies.dart';
+import 'package:masterclass_app/widgets/skills_level.dart';
 
 class AboutTheDevScreen extends StatelessWidget {
-  const AboutTheDevScreen({Key? key}) : super(key: key);
+  AboutTheDevScreen({Key? key}) : super(key: key);
+
+  final techSkillsData = <Map<String, String>>[
+    {
+      'name': 'Flutter',
+      'image': 'icon-simple-flutter.svg',
+      'level': '8',
+    },
+    {
+      'name': 'Dart',
+      'image': 'dart-logo.svg',
+      'level': '8',
+    },
+    {
+      'name': 'Firebase',
+      'image': 'firebase-logo.svg',
+      'level': '6',
+    },
+    {
+      'name': 'Python',
+      'image': 'python-logo.svg',
+      'level': '7',
+    },
+    {
+      'name': 'NodeJS',
+      'image': 'nodejs-logo.svg',
+      'level': '5',
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return ListView(
       children: [
         Container(
           width: double.infinity,
@@ -23,7 +52,7 @@ class AboutTheDevScreen extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
-            borderRadius: BorderRadius.circular((height * 0.5) * 0.1),
+            borderRadius: BorderRadius.circular((height * 0.5) * 0.08),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,8 +65,8 @@ class AboutTheDevScreen extends StatelessWidget {
                     CircleAvatar(
                       //backgroundColor: Colors.blue,
                       radius: height * 0.08,
-                      backgroundImage:
-                          AssetImage('assets/images/profile_picture.jpeg'),
+                      backgroundImage: const AssetImage(
+                          'assets/images/profile_picture.jpeg'),
                     ),
                     Text(
                       'Victor Fonseca',
@@ -77,7 +106,7 @@ class AboutTheDevScreen extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Text(
             'Tecnologias Favoritas',
             style: Theme.of(context)
@@ -86,38 +115,18 @@ class AboutTheDevScreen extends StatelessWidget {
                 .copyWith(fontSize: 14.0, fontWeight: FontWeight.w500),
           ),
         ),
-        Container(
-          height: height * 0.15,
-          margin: const EdgeInsets.only(left: 10.0),
-          child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: ((context, index) {
-                return Container(
-                  margin: const EdgeInsets.only(right: 10.0),
-                  padding: const EdgeInsets.all(5.0),
-                  width: width * 0.2,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular((height * 0.1) * 0.3),
-                    color: Theme.of(context).cardColor,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/images/icon-simple-flutter.svg',
-                        height: (height * 0.1) * 0.7,
-                      ),
-                      Text(
-                        'Flutter',
-                        style: Theme.of(context).textTheme.headline2!.copyWith(
-                            fontSize: 12, fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  ),
-                );
-              })),
-        )
+        FavoriteTechnologies(techSkillsData),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text(
+            'Habilidades e Competências',
+            style: Theme.of(context)
+                .textTheme
+                .headline2!
+                .copyWith(fontSize: 14.0, fontWeight: FontWeight.w500),
+          ),
+        ),
+        SkillsLevel(techSkillsData),
       ],
     );
   }
