@@ -4,7 +4,8 @@ import 'package:masterclass_app/widgets/favorite_technologies.dart';
 import 'package:masterclass_app/widgets/skills_level.dart';
 
 class AboutTheDevScreen extends StatelessWidget {
-  AboutTheDevScreen({Key? key}) : super(key: key);
+  final ScrollController controller;
+  AboutTheDevScreen(this.controller, {Key? key}) : super(key: key);
 
   final techSkillsData = <Map<String, String>>[
     {
@@ -39,6 +40,7 @@ class AboutTheDevScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return ListView(
+      controller: controller,
       children: [
         Container(
           width: double.infinity,

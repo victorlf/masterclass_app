@@ -19,7 +19,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   final controller = PageController();
-  final scrollController = ScrollController();
+  final activitiesScrollController = ScrollController();
+  final aboutScrollController = ScrollController();
   var hideBottomNavigation = false;
 
   static final labels = <Map<String, Widget>>[
@@ -31,8 +32,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    scrollController.addListener(() {
-      if (scrollController.position.userScrollDirection ==
+    activitiesScrollController.addListener(() {
+      if (activitiesScrollController.position.userScrollDirection ==
+          ScrollDirection.reverse) {
+        setState(() {
+          hideBottomNavigation = true;
+        });
+      } else {
+        setState(() {
+          hideBottomNavigation = false;
+        });
+      }
+    });
+
+    aboutScrollController.addListener(() {
+      if (aboutScrollController.position.userScrollDirection ==
           ScrollDirection.reverse) {
         setState(() {
           hideBottomNavigation = true;
@@ -47,16 +61,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    scrollController.removeListener(() {});
+    activitiesScrollController.removeListener(() {});
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final children = <Widget>[
-      ActivitiesScreen(scrollController),
+      ActivitiesScreen(activitiesScrollController),
       const RepositoriesScreen(),
-      AboutTheDevScreen(),
+      AboutTheDevScreen(aboutScrollController),
     ];
 
     final width = MediaQuery.of(context).size.width;
