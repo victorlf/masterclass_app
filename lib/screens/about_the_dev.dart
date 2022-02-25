@@ -9,6 +9,7 @@ class AboutTheDevScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           width: double.infinity,
@@ -58,25 +59,65 @@ class AboutTheDevScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SvgPicture.asset(
-                        'assets/images/icon-ionic-logo-whatsapp.svg'),
+                      'assets/images/icon-ionic-logo-whatsapp.svg',
+                    ),
                     SvgPicture.asset(
-                        'assets/images/icon-awesome-github-alt.svg'),
+                      'assets/images/icon-awesome-github-alt.svg',
+                    ),
                     SvgPicture.asset(
-                        'assets/images/icon-awesome-instagram.svg'),
+                      'assets/images/icon-awesome-instagram.svg',
+                    ),
                     SvgPicture.asset(
-                        'assets/images/icon-awesome-facebook-f.svg')
+                      'assets/images/icon-awesome-facebook-f.svg',
+                    )
                   ],
                 ),
               ),
             ],
           ),
         ),
-        Center(
+        Padding(
+          padding: const EdgeInsets.only(left: 10.0),
           child: Text(
-            'Sobre o Dev',
-            style: TextStyle(fontSize: 40.0),
+            'Tecnologias Favoritas',
+            style: Theme.of(context)
+                .textTheme
+                .headline2!
+                .copyWith(fontSize: 14.0, fontWeight: FontWeight.w500),
           ),
         ),
+        Container(
+          height: height * 0.15,
+          margin: const EdgeInsets.only(left: 10.0),
+          child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 5,
+              itemBuilder: ((context, index) {
+                return Container(
+                  margin: const EdgeInsets.only(right: 10.0),
+                  padding: const EdgeInsets.all(5.0),
+                  width: width * 0.2,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular((height * 0.1) * 0.3),
+                    color: Theme.of(context).cardColor,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      SvgPicture.asset(
+                        'assets/images/icon-simple-flutter.svg',
+                        height: (height * 0.1) * 0.7,
+                      ),
+                      Text(
+                        'Flutter',
+                        style: Theme.of(context).textTheme.headline2!.copyWith(
+                            fontSize: 12, fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                );
+              })),
+        )
       ],
     );
   }
