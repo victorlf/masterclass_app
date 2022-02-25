@@ -15,16 +15,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  int selectedIndex = 0;
   final duration = const Duration(milliseconds: 200);
+  final controller = PageController();
 
-  static const _children = <Widget>[
+  static const children = <Widget>[
     ActivitiesScreen(),
     RepositoriesScreen(),
     AboutTheDevScreen(),
   ];
 
-  static final _labels = <Map<String, Widget>>[
+  static final labels = <Map<String, Widget>>[
     {'Atividades': SvgPicture.asset('assets/images/icon-feather-target.svg')},
     {'Repositórios': SvgPicture.asset('assets/images/icon-awesome-github.svg')},
     {'Sobre o dev': const Icon(Icons.person)},
@@ -32,8 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
+    controller.animateToPage(index, duration: duration, curve: Curves.ease);
   }
 
   double _changePosition(double width, int index) {
@@ -58,8 +60,11 @@ class _HomeScreenState extends State<HomeScreen> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(_labels[_selectedIndex].keys.first),
-        body: _children[_selectedIndex],
+        appBar: CustomAppBar(labels[selectedIndex].keys.first),
+        body: PageView(
+          controller: controller,
+          children: children,
+        ),
         bottomNavigationBar: SizedBox(
           height: kBottomNavigationBarHeight,
           child: Stack(
@@ -67,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
               AnimatedPositioned(
                 duration: duration,
                 top: kBottomNavigationBarHeight * 0.09,
-                left: _changePosition(width, _selectedIndex),
+                left: _changePosition(width, selectedIndex),
                 child: Container(
                   width: 50.0,
                   height: 30.0,
@@ -84,12 +89,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        child: _labels[0].values.first,
+                        child: labels[0].values.first,
                         onTap: () {
                           _onItemTapped(0);
                         },
                       ),
-                      Text(_labels[0].keys.first),
+                      Text(labels[0].keys.first),
                     ],
                   ),
                   Padding(
@@ -103,10 +108,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        child: _labels[1].values.first,
+                        child: labels[1].values.first,
                         onTap: () => _onItemTapped(1),
                       ),
-                      Text(_labels[1].keys.first),
+                      Text(labels[1].keys.first),
                     ],
                   ),
                   Padding(
@@ -120,10 +125,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        child: _labels[2].values.first,
+                        child: labels[2].values.first,
                         onTap: () => _onItemTapped(2),
                       ),
-                      Text(_labels[2].keys.first),
+                      Text(labels[2].keys.first),
                     ],
                   ),
                 ],
