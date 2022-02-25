@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:masterclass_app/screens/about_the_dev.dart';
 import 'package:masterclass_app/screens/activities_screen.dart';
@@ -18,12 +19,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   final controller = PageController();
-
-  static const children = <Widget>[
-    ActivitiesScreen(),
-    RepositoriesScreen(),
-    AboutTheDevScreen(),
-  ];
+  final scrollController = ScrollController();
+  var hideBottomNavigation = false;
 
   static final labels = <Map<String, Widget>>[
     {'Atividades': SvgPicture.asset('assets/images/icon-feather-target.svg')},
@@ -32,7 +29,30 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      if (scrollController.position.userScrollDirection ==
+          ScrollDirection.reverse) {
+        setState(() {
+          hideBottomNavigation = true;
+        });
+      } else {
+        setState(() {
+          hideBottomNavigation = false;
+        });
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final children = <Widget>[
+      ActivitiesScreen(scrollController),
+      const RepositoriesScreen(),
+      const AboutTheDevScreen(),
+    ];
+
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
@@ -49,11 +69,13 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           },
         ),
-        bottomNavigationBar: CustomBottomNavigationBar(
-          width: width,
-          labels: labels,
-          controller: controller,
-        ),
+        bottomNavigationBar: !hideBottomNavigation
+            ? CustomBottomNavigationBar(
+                width: width,
+                labels: labels,
+                controller: controller,
+              )
+            : const SizedBox(),
       ),
     );
   }

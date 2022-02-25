@@ -52,7 +52,6 @@ class AppWidget extends StatelessWidget {
       routes: {
         SplashScreen.route: (context) => const SplashScreen(),
         HomeScreen.route: (context) => const HomeScreen(),
-        ActivitiesScreen.route: (context) => const ActivitiesScreen(),
       },
       //home: const SplashScreen(),
     );

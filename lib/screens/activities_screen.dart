@@ -3,7 +3,8 @@ import 'package:masterclass_app/widgets/activity_card.dart';
 import 'package:masterclass_app/widgets/custom_app_bar.dart';
 
 class ActivitiesScreen extends StatefulWidget {
-  const ActivitiesScreen({Key? key}) : super(key: key);
+  final ScrollController controller;
+  const ActivitiesScreen(this.controller, {Key? key}) : super(key: key);
 
   static String route = '/activities';
 
@@ -16,6 +17,7 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
+          controller: widget.controller,
           itemCount: 5,
           itemBuilder: (context, index) {
             return const ActivityCard();
