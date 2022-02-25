@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/screens/activities_screen.dart';
 import 'package:masterclass_app/screens/home_screen.dart';
 import 'package:masterclass_app/screens/splash_screen.dart';
 

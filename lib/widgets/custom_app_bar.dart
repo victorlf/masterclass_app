@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       leading: Container(
         height: kToolbarHeight,
         width: 50.0,
-        margin: EdgeInsets.only(left: 10.0),
+        margin: const EdgeInsets.only(left: 10.0),
         decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,
           image: const DecorationImage(
