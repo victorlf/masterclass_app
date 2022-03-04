@@ -1,39 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masterclass_app/utils/constants_infos.dart';
 import 'package:masterclass_app/widgets/favorite_technologies.dart';
 import 'package:masterclass_app/widgets/skills_level.dart';
 
 class AboutTheDevScreen extends StatelessWidget {
   final ScrollController controller;
-  AboutTheDevScreen(this.controller, {Key? key}) : super(key: key);
-
-  final techSkillsData = <Map<String, String>>[
-    {
-      'name': 'Flutter',
-      'image': 'icon-simple-flutter.svg',
-      'level': '8',
-    },
-    {
-      'name': 'Dart',
-      'image': 'dart-logo.svg',
-      'level': '8',
-    },
-    {
-      'name': 'Firebase',
-      'image': 'firebase-logo.svg',
-      'level': '6',
-    },
-    {
-      'name': 'Python',
-      'image': 'python-logo.svg',
-      'level': '7',
-    },
-    {
-      'name': 'NodeJS',
-      'image': 'nodejs-logo.svg',
-      'level': '5',
-    },
-  ];
+  const AboutTheDevScreen(this.controller, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +90,7 @@ class AboutTheDevScreen extends StatelessWidget {
                 .copyWith(fontSize: 14.0, fontWeight: FontWeight.w500),
           ),
         ),
-        FavoriteTechnologies(techSkillsData),
+        const FavoriteTechnologies(techSkillsData),
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Text(
@@ -128,7 +101,7 @@ class AboutTheDevScreen extends StatelessWidget {
                 .copyWith(fontSize: 14.0, fontWeight: FontWeight.w500),
           ),
         ),
-        SkillsLevel(techSkillsData),
+        const SkillsLevel(techSkillsData),
       ],
     );
   }

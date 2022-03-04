@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ActivityCard extends StatelessWidget {
-  const ActivityCard({Key? key}) : super(key: key);
+  final Map<String, String> activity;
+  const ActivityCard(this.activity, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +30,10 @@ class ActivityCard extends StatelessWidget {
                     CircleAvatar(
                       backgroundColor: Theme.of(context).primaryColor,
                       child: SvgPicture.asset(
-                          'assets/images/icon-material-toys.svg'),
+                          'assets/images/${activity['image']!}'),
                     ),
                     Text(
-                      '    Playground',
+                      '    ${activity['name']}',
                       style: Theme.of(context)
                           .textTheme
                           .headline2!
@@ -44,7 +45,7 @@ class ActivityCard extends StatelessWidget {
                   children: [
                     const Text('Exercícios:   '),
                     Text(
-                      '4',
+                      '${activity['number_of_exercises']}',
                       style: Theme.of(context).textTheme.headline2!.copyWith(
                             fontSize: 12.0,
                             fontWeight: FontWeight.w500,
@@ -55,7 +56,7 @@ class ActivityCard extends StatelessWidget {
               ],
             ),
             Text(
-              'Ambiente destinado a testes e estudos em geral',
+              activity['description']!,
               style: Theme.of(context).textTheme.bodyText1,
             ),
             Row(

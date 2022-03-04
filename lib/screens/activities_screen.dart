@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/utils/constants_infos.dart';
 import 'package:masterclass_app/widgets/activity_card.dart';
 
 class ActivitiesScreen extends StatefulWidget {
@@ -16,11 +17,12 @@ class _ActivitiesScreenState extends State<ActivitiesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-          controller: widget.controller,
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return const ActivityCard();
-          }),
+        controller: widget.controller,
+        itemCount: activitiesData.length,
+        itemBuilder: (context, index) {
+          return ActivityCard(activitiesData[index]);
+        },
+      ),
     );
   }
 }
