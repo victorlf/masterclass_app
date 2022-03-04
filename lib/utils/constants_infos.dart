@@ -7,7 +7,7 @@ final activitiesData = <Map<String, dynamic>>[
     'description':
         'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos',
     'githubLink': '',
-    'number_of_exercises': '4',
+    'number_of_exercises': '${animationExercises.length}',
     'see_more': animationExercises,
   },
   {
@@ -16,18 +16,18 @@ final activitiesData = <Map<String, dynamic>>[
     'description':
         'Aplicação da técnica de leitura de mockup, contendo 2 exercícios',
     'githubLink': '',
-    'number_of_exercises': '2',
+    'number_of_exercises': '${mockupReadingExercises.length}',
     'see_more': mockupReadingExercises,
   },
-  {
-    'name': 'App da Masterclass',
-    'image': 'icon-material-toys.svg',
-    'description':
-        'App que compila todas as atividadese informação sobre o deve (este aqui)',
-    'githubLink': '',
-    'number_of_exercises': '3',
-    'see_more': animationExercises,
-  },
+  // {
+  //   'name': 'App da Masterclass',
+  //   'image': 'icon-material-toys.svg',
+  //   'description':
+  //       'App que compila todas as atividadese informação sobre o deve (este aqui)',
+  //   'githubLink': '',
+  //   'number_of_exercises': '3',
+  //   'see_more': animationExercises,
+  // },
   {
     'name': 'Playground',
     'image': 'icon-material-toys.svg',
