@@ -29,12 +29,12 @@ final activitiesData = <Map<String, dynamic>>[
   //   'see_more': animationExercises,
   // },
   {
-    'name': 'Playground',
+    'name': 'Gerador de CPF',
     'image': 'icon-material-toys.svg',
-    'description': 'Ambiente destinado a testes e estudos em geral',
+    'description': 'Montando o algoritmo para geração e validação de CPF',
     'githubLink': '',
-    'number_of_exercises': '3',
-    'see_more': animationExercises,
+    'number_of_exercises': '${cpfgeneratorAndValidatorExercieses.length}',
+    'see_more': cpfgeneratorAndValidatorExercieses,
   },
 ];
 
