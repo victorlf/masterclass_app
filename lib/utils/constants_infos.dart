@@ -39,7 +39,7 @@ const activitiesData = <Map<String, String>>[
 const techSkillsData = <Map<String, String>>[
   {
     'name': 'Flutter',
-    'image': 'icon-simple-flutter.svg',
+    'image': 'flutter-logo.svg',
     'level': '8',
   },
   {
