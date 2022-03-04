@@ -1,16 +1,9 @@
-# masterclass_app
+# App da Masterclass
 
-A new Flutter project.
+Desafio do curso de Flutter da Flutterando Masterclass, que propõem concentrar minhas soluções para todos os demais desafios propostos durante o curso.
 
-## Getting Started
+## Como usar
 
-This project is a starting point for a Flutter application.
+![masterclass_app](https://user-images.githubusercontent.com/23375346/156851235-de83809a-b87a-44c9-86d6-289128eda801.gif)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## [Todos as Soluções de Desafios](https://github.com/victorlf/flutterando_masterclass)
