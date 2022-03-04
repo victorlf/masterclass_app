@@ -56,7 +56,7 @@ class ExerciseCard extends StatelessWidget {
               radius: 15.0,
               backgroundColor: Theme.of(context).primaryColor,
               child: Text(
-                '$index',
+                '${index + 1}',
                 style: Theme.of(context)
                     .textTheme
                     .headline2!

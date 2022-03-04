@@ -17,7 +17,7 @@ final activitiesData = <Map<String, dynamic>>[
         'Aplicação da técnica de leitura de mockup, contendo 2 exercícios',
     'githubLink': '',
     'number_of_exercises': '2',
-    'see_more': animationExercises,
+    'see_more': mockupReadingExercises,
   },
   {
     'name': 'App da Masterclass',
