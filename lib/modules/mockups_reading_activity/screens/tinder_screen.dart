@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:masterclass_app/modules/mockups_reading_activity/widgets/tinder_home_screen_button.dart';
 
 class TinderScreen extends StatelessWidget {
   const TinderScreen({Key? key}) : super(key: key);
@@ -93,15 +94,17 @@ class TinderScreen extends StatelessWidget {
             const SizedBox(
               height: 30.0,
             ),
-            const HomeScreenButton(text: 'APPLE', icon: FontAwesomeIcons.apple),
+            const TinderHomeScreenButton(
+                text: 'APPLE', icon: FontAwesomeIcons.apple),
             const SizedBox(
               height: 10.0,
             ),
-            const HomeScreenButton(text: 'FACEBOOK', icon: Icons.facebook),
+            const TinderHomeScreenButton(
+                text: 'FACEBOOK', icon: Icons.facebook),
             const SizedBox(
               height: 10.0,
             ),
-            const HomeScreenButton(text: 'PHONE NUMBER', icon: Icons.sms),
+            const TinderHomeScreenButton(text: 'PHONE NUMBER', icon: Icons.sms),
             const SizedBox(
               height: 10.0,
             ),
@@ -114,59 +117,6 @@ class TinderScreen extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class HomeScreenButton extends StatelessWidget {
-  final String text;
-  final IconData icon;
-  const HomeScreenButton({Key? key, required this.text, required this.icon})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final buttonMinWidth = screenWidth < 500.0 ? double.infinity : 500.0;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: SizedBox(
-        width: buttonMinWidth,
-        child: MaterialButton(
-          height: 50.0,
-          minWidth: buttonMinWidth,
-          onPressed: () {},
-          shape: RoundedRectangleBorder(
-              side: const BorderSide(width: 2.0, color: Colors.white),
-              borderRadius: BorderRadius.circular(40.0)),
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(
-                  icon,
-                  size: 20.0,
-                ),
-                Text(
-                  'SIGN IN WITH $text',
-                  style: const TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 1.0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  width: 24,
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );
