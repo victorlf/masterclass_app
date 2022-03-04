@@ -38,10 +38,12 @@ class AboutTheDevScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     CircleAvatar(
-                      //backgroundColor: Colors.blue,
                       radius: height * 0.08,
-                      backgroundImage: const AssetImage(
-                          'assets/images/profile_picture.jpeg'),
+                      child: CircleAvatar(
+                        radius: height * 0.075,
+                        backgroundImage: const AssetImage(
+                            'assets/images/profile_picture.jpeg'),
+                      ),
                     ),
                     Text(
                       'Victor Fonseca',
