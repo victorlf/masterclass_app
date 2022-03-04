@@ -35,10 +35,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         position = (width / 3) * 0.5 - 33;
         break;
       case 1:
-        position = (width / 3) * 1.5 - 28;
+        position = (width / 3) * 1.5 - 29;
         break;
       case 2:
-        position = (width / 3) * 2.5 - 20;
+        position = (width / 3) * 2.5 - 21;
         break;
       default:
     }
@@ -59,7 +59,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               width: 50.0,
               height: 30.0,
               decoration: BoxDecoration(
-                color: Theme.of(context).cardColor,
+                color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(20.0),
               ),
             ),
@@ -81,7 +81,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    vertical: kBottomNavigationBarHeight * 0.2),
+                  vertical: kBottomNavigationBarHeight * 0.2,
+                ),
                 child: VerticalDivider(
                   color: Theme.of(context).textTheme.bodyText1!.color,
                 ),
@@ -98,7 +99,8 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    vertical: kBottomNavigationBarHeight * 0.2),
+                  vertical: kBottomNavigationBarHeight * 0.2,
+                ),
                 child: VerticalDivider(
                   color: Theme.of(context).textTheme.bodyText1!.color,
                 ),
