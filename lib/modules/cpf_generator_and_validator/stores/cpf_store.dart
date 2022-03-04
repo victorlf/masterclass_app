@@ -22,7 +22,7 @@ class CpfStore extends ChangeNotifier {
   void validateCpf(TextEditingController controller) {
     final cpf = controller.text;
     if (cpf.characters.length < 14) {
-      validationMessage = 'CPF não foi preenchido corretamente';
+      validationMessage = 'CPF preenchido incorretamente';
       messageColor = Colors.yellow.shade700;
 
       notifyListeners();
