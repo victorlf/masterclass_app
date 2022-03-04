@@ -73,27 +73,29 @@ class _CpfScreenState extends State<CpfScreen> {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Theme.of(context).primaryColor),
+                    primary: Theme.of(context).primaryColor,
+                  ),
                   onPressed: () {
                     genetateCpf(controller);
                   },
                   child: Text(
                     'Gerar CPF',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.headline2!.color,
+                      color: Theme.of(context).highlightColor,
                     ),
                   ),
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: Theme.of(context).primaryColor),
+                    primary: Theme.of(context).primaryColor,
+                  ),
                   onPressed: () {
                     validateCpf(controller);
                   },
                   child: Text(
                     'Validar CPF',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.headline2!.color,
+                      color: Theme.of(context).highlightColor,
                     ),
                   ),
                 )
