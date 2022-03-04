@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:masterclass_app/screens/about_the_dev.dart';
-import 'package:masterclass_app/screens/activities_screen.dart';
-import 'package:masterclass_app/screens/repositories_screen.dart';
-import 'package:masterclass_app/widgets/custom_app_bar.dart';
-import 'package:masterclass_app/widgets/custom_bottom_navigation_bar.dart';
+import 'package:masterclass_app/modules/app/widgets/custom_app_bar.dart';
+import 'package:masterclass_app/modules/app/widgets/custom_bottom_navigation_bar.dart';
+
+import 'about_the_dev.dart';
+import 'activities/activities_screen.dart';
+import 'repositories_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -76,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(labels[selectedIndex].keys.first),
+        appBar: CustomAppBar(title: labels[selectedIndex].keys.first),
         body: PageView.builder(
           physics: const NeverScrollableScrollPhysics(),
           controller: controller,

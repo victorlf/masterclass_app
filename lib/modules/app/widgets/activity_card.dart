@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masterclass_app/modules/app/screens/activities/activity_exercises_screen.dart';
+import 'package:masterclass_app/utils/constants_exercises.dart';
 
 class ActivityCard extends StatelessWidget {
-  final Map<String, String> activity;
+  final Map<String, dynamic> activity;
   const ActivityCard(this.activity, {Key? key}) : super(key: key);
 
   @override
@@ -78,7 +80,17 @@ class ActivityCard extends StatelessWidget {
                   ),
                 ),
                 MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ActivityExercisesScreen(
+                          title: activity['name']!,
+                          exercises: activity['see_more']!,
+                        ),
+                      ),
+                    );
+                  },
                   color: Theme.of(context).primaryColor,
                   padding: const EdgeInsets.symmetric(
                       horizontal: 30.0, vertical: 8.0),

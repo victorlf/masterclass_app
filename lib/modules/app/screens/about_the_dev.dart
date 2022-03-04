@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:masterclass_app/modules/app/widgets/favorite_technologies.dart';
+import 'package:masterclass_app/modules/app/widgets/skills_level.dart';
 import 'package:masterclass_app/utils/constants_infos.dart';
-import 'package:masterclass_app/widgets/favorite_technologies.dart';
-import 'package:masterclass_app/widgets/skills_level.dart';
 
 class AboutTheDevScreen extends StatelessWidget {
   final ScrollController controller;

@@ -3,26 +3,30 @@ import 'package:flutter_svg/svg.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
-  const CustomAppBar(this.title, {Key? key}) : super(key: key);
+  final bool useBackArrow;
+  const CustomAppBar({required this.title, this.useBackArrow = false, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      automaticallyImplyLeading: false,
+      automaticallyImplyLeading: useBackArrow,
       titleSpacing: 5.0,
-      leading: Container(
-        height: kToolbarHeight,
-        width: 50.0,
-        margin: const EdgeInsets.only(left: 10.0),
-        decoration: BoxDecoration(
-          color: Theme.of(context).backgroundColor,
-          image: const DecorationImage(
-            image: AssetImage(
-              'assets/images/logo@3x.png',
+      leading: useBackArrow
+          ? null
+          : Container(
+              height: kToolbarHeight,
+              width: 50.0,
+              margin: const EdgeInsets.only(left: 10.0),
+              decoration: BoxDecoration(
+                color: Theme.of(context).backgroundColor,
+                image: const DecorationImage(
+                  image: AssetImage(
+                    'assets/images/logo@3x.png',
+                  ),
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

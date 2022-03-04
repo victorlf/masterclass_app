@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:masterclass_app/modules/app/widgets/activity_card.dart';
 import 'package:masterclass_app/utils/constants_infos.dart';
-import 'package:masterclass_app/widgets/activity_card.dart';
 
 class ActivitiesScreen extends StatefulWidget {
   final ScrollController controller;

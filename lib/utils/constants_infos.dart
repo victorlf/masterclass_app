@@ -1,4 +1,6 @@
-const activitiesData = <Map<String, String>>[
+import 'constants_exercises.dart';
+
+final activitiesData = <Map<String, dynamic>>[
   {
     'name': 'Animações',
     'image': 'icon-awesome-running.svg',
@@ -6,7 +8,7 @@ const activitiesData = <Map<String, String>>[
         'Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos',
     'githubLink': '',
     'number_of_exercises': '4',
-    'see_more': '',
+    'see_more': animationExercises,
   },
   {
     'name': 'Leitura de Mockup',
@@ -15,7 +17,7 @@ const activitiesData = <Map<String, String>>[
         'Aplicação da técnica de leitura de mockup, contendo 2 exercícios',
     'githubLink': '',
     'number_of_exercises': '2',
-    'see_more': '',
+    'see_more': animationExercises,
   },
   {
     'name': 'App da Masterclass',
@@ -24,7 +26,7 @@ const activitiesData = <Map<String, String>>[
         'App que compila todas as atividadese informação sobre o deve (este aqui)',
     'githubLink': '',
     'number_of_exercises': '3',
-    'see_more': '',
+    'see_more': animationExercises,
   },
   {
     'name': 'Playground',
@@ -32,7 +34,7 @@ const activitiesData = <Map<String, String>>[
     'description': 'Ambiente destinado a testes e estudos em geral',
     'githubLink': '',
     'number_of_exercises': '3',
-    'see_more': '',
+    'see_more': animationExercises,
   },
 ];
 

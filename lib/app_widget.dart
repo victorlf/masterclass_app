@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:masterclass_app/screens/home_screen.dart';
-import 'package:masterclass_app/screens/splash_screen.dart';
-
+import 'package:masterclass_app/modules/app/screens/home_screen.dart';
+import 'package:masterclass_app/modules/app/screens/splash_screen.dart';
 import 'utils/custom_scroll_behavior.dart';
 
 class AppWidget extends StatelessWidget {
