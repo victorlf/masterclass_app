@@ -78,6 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: CustomAppBar(labels[selectedIndex].keys.first),
         body: PageView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           controller: controller,
           itemCount: children.length,
           itemBuilder: (context, index) {
